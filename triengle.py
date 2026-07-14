@@ -7,3 +7,8 @@ print("The length of the hypotenuse is:", hypotenuse)  # Вив
 S = side_a * side_b/2
 print("The area of the triangle is:", S, type(S))  # Виведе: 25.0
 
+n = 30000
+hours = n // (60 * 60)
+minutes = (n - hours * 60 * 60) // 60
+seconds = n - hours * 60 * 60 - minutes * 60
+print(f"{hours}:{minutes}:{seconds}")   
