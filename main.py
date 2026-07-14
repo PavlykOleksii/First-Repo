@@ -13,4 +13,4 @@ print(name)   # Wendy's dog
 z = 123
 x = 2
 y = x + 10 + z
-print(y)  # Виведе: 12
+print(y)  # Виведе: 135
