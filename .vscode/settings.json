@@ -1,0 +1,10 @@
+{
+    "editor.formatOnSave": true,
+    "editor.fontSize": 17,
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.wordWrap": "on",
+    "files.exclude": {
+        "/__pycache__": true
+    },
+    "editor.mouseWheelZoom": true
+}
