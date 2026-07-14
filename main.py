@@ -10,6 +10,7 @@ print(can_vote) # Виведе: True
 name = "Wendy\'s dog"
 print(name)   # Wendy's dog
 
+z = 123
 x = 2
-y = x + 10
+y = x + 10 + z
 print(y)  # Виведе: 12
