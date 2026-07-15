@@ -14,3 +14,12 @@ z = 123
 x = 2
 y = x + 10 + z
 print(y)  # Виведе: 135
+
+name = "Oleksii"
+hello_string = f"Hello, {name}!"
+print(hello_string)  # Виведе: Hello, Oleksii!
+
+s1 = 'Hello'
+s2 = 'world!'
+joined_string = f"{s1} {s2}"  # Hello world!
+print(joined_string)  # Виведе: Hello world!
