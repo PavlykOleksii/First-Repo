@@ -13,3 +13,5 @@ minutes = (n - hours * 60 * 60) // 60
 seconds = n - hours * 60 * 60 - minutes * 60
 print(f"{hours}:{minutes}:{seconds}")  # Виведе: 8:20:0
 
+a = input("Enter a number: ")
+print(a)
