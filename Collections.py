@@ -24,3 +24,13 @@ print(my_list[0] + " " + my_list[2] + " " + my_list[1])
 print(my_list.pop(1))  # Виведе: ["Pavlyk", "Pavlovych", "Oleksii", 1]
 my_list.append("Pavlovych")
 print(my_list)  # Виведе: ["Pavlyk", "Oleksii", 1]
+
+num = [45, 18]
+my_list.extend(num)
+print(my_list)  # Виведе: ["Pavlyk", "Oleksii", 1, 45, 18]
+
+my_list.insert(2, "Oleksii Pavlovych")
+print(my_list)  # Виведе: ["Pavlyk", "Oleksii
+
+my_dict = {"name": "Alice", "age": 25, "city": "New York"}
+print(my_dict["name"])  # Виведе: "Alice"
