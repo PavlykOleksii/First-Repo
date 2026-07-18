@@ -1,11 +1,12 @@
 {
     "editor.formatOnSave": true,
-    "editor.fontSize": 17,
+    "editor.fontSize": 20,
     "editor.defaultFormatter": "ms-python.python",
     "editor.wordWrap": "on",
     "files.exclude": {
         "/__pycache__": true
     },
     "editor.mouseWheelZoom": true,
-    "claudeCodeChat.permissions.yoloMode": false
+    "claudeCodeChat.permissions.yoloMode": false,
+    "terminal.integrated.fontSize": 20
 }
