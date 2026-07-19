@@ -73,16 +73,20 @@
 #     result = y/x
 #     print(f"Результат ділення Y на X: {result}")
 
-x = int(input("Введіть число X: "))
-y = int(input("Введіть ще одне число Y : "))
+# x = int(input("Введіть число X: "))
+# y = int(input("Введіть ще одне число Y : "))
 
-if x >= 0:
-    if y >= 0:
-        print(f"Перша чверть.")
-    else:
-        print(f"Четверта чверть.")
-else:
-    if y >= 0:
-        print(f"Друга чверть.")
-    else:
-        print(f"Третя чверть.")
+# if x >= 0:
+#     if y >= 0:
+#         print(f"Перша чверть.")
+#     else:
+#         print(f"Четверта чверть.")
+# else:
+#     if y >= 0:
+#         print(f"Друга чверть.")
+#     else:
+#         print(f"Третя чверть.")
+
+is_nice = True
+state = "nice" if is_nice else "not nice"
+print(state)
