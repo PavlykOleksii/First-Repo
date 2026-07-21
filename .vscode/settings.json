@@ -8,5 +8,6 @@
     },
     "editor.mouseWheelZoom": true,
     "claudeCodeChat.permissions.yoloMode": false,
-    "terminal.integrated.fontSize": 20
+    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
 }

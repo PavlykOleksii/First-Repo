@@ -18,4 +18,3 @@ seventh_day_2020 = datetime(year=2020, month=1, day=7, hour=14)
 difference = seventh_day_2020 - seventh_day_2019
 print(difference)  # 3650 days, 0:00:00
 print(difference.total_seconds())  # 31536000.0
-difference.
