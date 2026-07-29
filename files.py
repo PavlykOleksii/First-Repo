@@ -8,19 +8,44 @@ strtxt = "У Python є абстракція над файлами\n — це в�
 # # операції над файлом
 # fh1.close()
 #print(strtxt)
-fh = open("test1.txt","w+",encoding="utf-8")
-symlwr = fh.write(strtxt)
-five_symbl = fh.read()
+# fh = open("test1.txt","w+",encoding="utf-8")
+# symlwr = fh.write(strtxt)
+# five_symbl = fh.read()
 
-fh.close()
+# fh.close()
 
-fha = open("test1.txt","r",encoding="utf-8")
+# fha = open("test1.txt","r",encoding="utf-8")
 
-line = list()
+# line = list()
 
-for lin in fha:
-    line.append(lin.strip())
+# for lin in fha:
+#     line.append(lin.strip())
 
 
-print(line)
-fha.close()
+# print(line)
+# fha.close()
+
+# fh = open('test.txt', 'w+')
+# fh.write("hello")
+
+# fh.seek(1)
+# sec = fh.read(1)
+# print(sec)
+# fh.close()
+
+# fh = open("test.txt", "w+")
+# fh.write("hello")
+
+# position = fh.tell()
+# print(position)
+
+# fh.seek(1)
+# position = fh.tell()
+# print(position)
+
+# fh.read(2)
+# position = fh.tell()
+# print(position)
+
+# fh.close()
+
