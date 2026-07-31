@@ -1,13 +1,10 @@
 {
     "editor.formatOnSave": true,
-    "editor.fontSize": 20,
     "editor.defaultFormatter": "ms-python.python",
     "editor.wordWrap": "on",
     "files.exclude": {
         "/__pycache__": true
     },
     "editor.mouseWheelZoom": true,
-    "claudeCodeChat.permissions.yoloMode": false,
-    "terminal.integrated.fontSize": 20,
-    "terminal.integrated.defaultProfile.windows": "Git Bash"
+    "claudeCodeChat.permissions.yoloMode": false
 }
