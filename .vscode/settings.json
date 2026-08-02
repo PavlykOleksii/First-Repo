@@ -6,5 +6,6 @@
         "/__pycache__": true
     },
     "editor.mouseWheelZoom": true,
-    "claudeCodeChat.permissions.yoloMode": false
+    "claudeCodeChat.permissions.yoloMode": false,
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }
