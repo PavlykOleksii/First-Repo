@@ -7,5 +7,6 @@
     },
     "editor.mouseWheelZoom": true,
     "claudeCodeChat.permissions.yoloMode": false,
-    "python-envs.defaultEnvManager": "ms-python.python:system"
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "chat.sessionSync.enabled": true
 }
