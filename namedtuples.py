@@ -52,11 +52,13 @@
 
 # print(letter)
 
-import collections
+from collections import defaultdict
 
-sentence = "the quick brown fox jumps over the lazy dog"
+words = ['apple', 'zoo', 'lion', 'lama', 'bear', 'bet', 'wolf', 'appendix']
+grouped_words = defaultdict(list)
 
-list_words = sentence.split()
-word_count = collections.Counter(list_words)
+for word in words:
+    char = word[0]
+    grouped_words[char].append(word)
 
-for word_count.items()
+print(dict(grouped_words))
