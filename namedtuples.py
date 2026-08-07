@@ -59,4 +59,6 @@ sentence = "the quick brown fox jumps over the lazy dog"
 list_words = sentence.split()
 word_count = collections.Counter(list_words)
 
-for word_count.items()
+for word, cound in word_count.items():
+    print(word, cound)
+    
