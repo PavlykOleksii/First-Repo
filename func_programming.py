@@ -1,7 +1,8 @@
-# def my_function():
-#     print("Hello, world!")
+def my_function(string):
+    print(string)
 
-# f = my_function
+my_function("Привіт")
+my_function("Пока")
 # f()
 
 # from typing import Callable
