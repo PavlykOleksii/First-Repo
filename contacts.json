@@ -1,0 +1,28 @@
+{
+    "contacts": [
+        {
+            "name": "John Smith",
+            "email": "john@test.com",
+            "phone": "1234567890",
+            "favorite": false
+        },
+        {
+            "name": "Kate Brown",
+            "email": "kate@test.com",
+            "phone": "2345678901",
+            "favorite": true
+        },
+        {
+            "name": "Bob Wilson",
+            "email": "bob@test.com",
+            "phone": "3456789012",
+            "favorite": false
+        },
+        {
+            "name": "Alice Green",
+            "email": "alice@test.com",
+            "phone": "4567890123",
+            "favorite": true
+        }
+    ]
+}
