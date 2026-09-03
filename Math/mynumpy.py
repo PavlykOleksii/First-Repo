@@ -7,4 +7,4 @@ A = np.array([[1, 2, 3, 4],
 
 print("Матриця A:")
 print(A)
-print(f"\\nРозмірність: {A.shape[0]} рядків × {A.shape[1]} стовпців")
+print(f"\nРозмірність: {A.shape[0]} рядків × {A.shape[1]} стовпців")
