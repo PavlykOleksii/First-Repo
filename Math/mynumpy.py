@@ -168,21 +168,101 @@ import numpy as np
 # print("\n" + f"Найближче місто: {city_names[nearest_idx]}")
 # print(f"Відстань: {distances[nearest_idx]:.2f}")
 
+# import numpy as np
+
+# v = np.array([3, -4])
+
+# # Евклідова
+# norm_L2 = np.linalg.norm(v)
+# # або явно з параметром ord=2 np.linalg.norm(v, ord=2)
+
+# # Мангеттенська
+# norm_L1 = np.linalg.norm(v, ord=1)
+
+# # Максимуму
+# norm_Linf = np.linalg.norm(v, ord=np.inf)
+
+# print(f"Вектор: v = {v}")
+# print("\n" + f"Евклідова норма: {norm_L2}")
+# print(f"Мангеттенська норма: {norm_L1}")
+# print(f"Норма максимуму: {norm_Linf}")
+
+# from scipy.spatial import distance
+
+# A = np.array([2, 3])
+# B = np.array([5, 7])
+
+# # Різні метрики через scipy
+# euclidean = distance.euclidean(A, B)
+# manhattan = distance.cityblock(A, B)  # cityblock = Manhattan
+# chebyshev = distance.chebyshev(A, B)  # Chebyshev
+
+# print(f"Евклідова: {euclidean:.2f}")
+# print(f"Мангеттенська: {manhattan:.2f}")
+# print(f"Чебишова: {chebyshev:.2f}")
+
+# import numpy as np
+
+# u = np.array([2, 3])
+# v = np.array([4, -1])
+
+# dot = np.dot(u, v)
+
+# print(f"Скалярний добуток: {dot}")
+
+# dot1 = u @ v
+# print(f"Скалярний добуток: {dot1}")
+
+
+# Випадок 1: Співнапрямлені вектори
+# u1 = np.array([1, 2])
+# v1 = np.array([2, 4])  # v1 = 2 * u1
+
+# angle1 = np.arccos((u1 @ v1) / (np.linalg.norm(u1) * np.linalg.norm(v1)))
+# print("Співнапрямлені вектори:")
+# print(f"  u = {u1}, v = {v1}")
+# print(f"  Кут: {np.degrees(angle1):.2f} градусів")
+
+# # Випадок 2: Перпендикулярні вектори 
+# u2 = np.array([1, 0])
+# v2 = np.array([0, 1])
+
+# angle2 = np.arccos((u2 @ v2) / (np.linalg.norm(u2) * np.linalg.norm(v2)))
+# print("Перпендикулярні вектори:")
+# print(f"  u = {u2}, v = {v2}")
+# print(f"  Кут: {np.degrees(angle2):.2f} градусів")
+
+# # Випадок 3: Протилежно напрямлені
+# u3 = np.array([1, 2])
+# v3 = np.array([-1, -2])
+
+# angle3 = np.arccos((u3 @ v3) / (np.linalg.norm(u3) * np.linalg.norm(v3)))
+# print("Протилежно напрямлені вектори:")
+# print(f"  u = {u3}, v = {v3}")
+# print(f"  Кут: {np.degrees(angle3):.2f} градусів")
+
 import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from sklearn.datasets import load_iris
 
-v = np.array([3, -4])
+# Завантажуємо дані про квіти Iris
+iris = load_iris()
+X = iris.data  # 150 квітів, 4 ознаки
 
-# Евклідова
-norm_L2 = np.linalg.norm(v)
-# або явно з параметром ord=2 np.linalg.norm(v, ord=2)
+print(f"Оригінальні дані: {X.shape}")
 
-# Мангеттенська
-norm_L1 = np.linalg.norm(v, ord=1)
+# Зменшуємо кількість вимірів до 2 головних компонент
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
 
-# Максимуму
-norm_Linf = np.linalg.norm(v, ord=np.inf)
+print(f"Після PCA: {X_pca.shape}")
 
-print(f"Вектор: v = {v}")
-print("\n" + f"Евклідова норма: {norm_L2}")
-print(f"Мангеттенська норма: {norm_L1}")
-print(f"Норма максимуму: {norm_Linf}")
+# Вектори головних компонент
+pc1, pc2 = pca.components_
+dot_product = pc1 @ pc2
+
+print("\n" + f"Перша компонента: {pc1}")
+print(f"Друга компонента: {pc2}")
+print("\n" + f"Скалярний добуток PC1·PC2 = {dot_product:.10f}")
+print(f"Ортогональні: {np.abs(dot_product) < 1e-10}")
