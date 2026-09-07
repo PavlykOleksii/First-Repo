@@ -241,28 +241,50 @@ import numpy as np
 # print(f"  u = {u3}, v = {v3}")
 # print(f"  Кут: {np.degrees(angle3):.2f} градусів")
 
+# import numpy as np
+# import matplotlib.pyplot as plt
+# from sklearn.decomposition import PCA
+# from sklearn.datasets import load_iris
+
+# # Завантажуємо дані про квіти Iris
+# iris = load_iris()
+# X = iris.data  # 150 квітів, 4 ознаки
+
+# print(f"Оригінальні дані: {X.shape}")
+
+# # Зменшуємо кількість вимірів до 2 головних компонент
+# pca = PCA(n_components=2)
+# X_pca = pca.fit_transform(X)
+
+# print(f"Після PCA: {X_pca.shape}")
+
+# # Вектори головних компонент
+# pc1, pc2 = pca.components_
+# dot_product = pc1 @ pc2
+
+# print("\n" + f"Перша компонента: {pc1}")
+# print(f"Друга компонента: {pc2}")
+# print("\n" + f"Скалярний добуток PC1·PC2 = {dot_product:.10f}")
+# print(f"Ортогональні: {np.abs(dot_product) < 1e-10}")
+
 import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.decomposition import PCA
-from sklearn.datasets import load_iris
 
-# Завантажуємо дані про квіти Iris
-iris = load_iris()
-X = iris.data  # 150 квітів, 4 ознаки
+# Три вектори в R²
+v1 = np.array([1, 0])
+v2 = np.array([0, 1])
+v3 = np.array([2, 3])
 
-print(f"Оригінальні дані: {X.shape}")
+# Складаємо матрицю з векторів як стовпців
+A = np.column_stack([v1, v2, v3])
+print("Матриця з векторів:")
+print(A)
 
-# Зменшуємо кількість вимірів до 2 головних компонент
-pca = PCA(n_components=2)
-X_pca = pca.fit_transform(X)
+rank = np.linalg.matrix_rank(A)
+print(f"Ранг матриці: {rank}")
+print(f"Кількість векторів: {A.shape[1]}")
 
-print(f"Після PCA: {X_pca.shape}")
-
-# Вектори головних компонент
-pc1, pc2 = pca.components_
-dot_product = pc1 @ pc2
-
-print("\n" + f"Перша компонента: {pc1}")
-print(f"Друга компонента: {pc2}")
-print("\n" + f"Скалярний добуток PC1·PC2 = {dot_product:.10f}")
-print(f"Ортогональні: {np.abs(dot_product) < 1e-10}")
+if rank < A.shape[1]:
+    print(f"Вектори лінійно залежні")
+    print(f"Лінійно незалежних серед них: {rank}")
+else:
+    print(f"Вектори лінійно незалежні")
