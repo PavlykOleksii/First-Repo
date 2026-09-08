@@ -267,24 +267,124 @@ import numpy as np
 # print("\n" + f"Скалярний добуток PC1·PC2 = {dot_product:.10f}")
 # print(f"Ортогональні: {np.abs(dot_product) < 1e-10}")
 
+# import numpy as np
+
+# # Три вектори в R²
+# v1 = np.array([1, 0])
+# v2 = np.array([0, 1])
+# v3 = np.array([2, 3])
+
+# # Складаємо матрицю з векторів як стовпців
+# A = np.column_stack([v1, v2, v3])
+# print("Матриця з векторів:")
+# print(A)
+
+# rank = np.linalg.matrix_rank(A)
+# print(f"Ранг матриці: {rank}")
+# print(f"Кількість векторів: {A.shape[1]}")
+
+# if rank < A.shape[1]:
+#     print(f"Вектори лінійно залежні")
+#     print(f"Лінійно незалежних серед них: {rank}")
+# else:
+#     print(f"Вектори лінійно незалежні")
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# # Матриця масштабування:
+# # розтягуємо в 2 рази по осі x, стискаємо у 2 рази по осі y
+# S = np.array([
+#     [2, 0],
+#     [0, 0.5]
+# ])
+
+# # Вихідна фігура — квадрат одиничного розміру
+# square = np.array([
+#     [0, 1, 1, 0],  # координати x
+#     [0, 0, 1, 1]   # координати y
+# ])
+
+# # Застосовуємо перетворення до всіх вершин
+# square_scaled = S @ square
+
+# # Виведення результату
+# print("Матриця масштабування S:")
+# print(S)
+# print("\n" + "Початковий квадрат (рядки: x, y):")
+# print(square)
+# print("\n" + "Після перетворення S·square:")
+# print(square_scaled)
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# # Вихідна фігура — квадрат одиничного розміру
+# square = np.array([
+#     [0, 1, 1, 0],  # координати x
+#     [0, 0, 1, 1]   # координати y
+# ])
+
+# # Обертання на 45 градусів
+# theta = np.pi / 4  # 45 градусів
+# R = np.array([
+#     [np.cos(theta), -np.sin(theta)],
+#     [np.sin(theta), np.cos(theta)]
+# ])
+
+# # Застосовуємо до квадрата
+# square_rotated = R @ square
+
+# # Виведення результату
+# print("Матриця Обертання R:")
+# print(R)
+# print("\\nПочатковий квадрат (рядки: x, y):")
+# print(square)
+# print("\\nПісля перетворення R · square:")
+# print(square_rotated)
+
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# # Зсув на вектор [2, 1]
+# b = np.array([2, 1])
+
+# # Квадрат
+# square = np.array([
+#     [0, 1, 1, 0, 0],
+#     [0, 0, 1, 1, 0]
+# ])
+
+# # Афінне перетворення: T(v) = I*v + b 
+# square_translated = square + b[:, np.newaxis]
+
+# print(f"Вектор зсуву: {b}")
+# print(f"\nПочатковий квадрат (координати вершин):")
+# print(square)
+# print(f"\nКвадрат після зсуву (координати вершин):")
+# print(square_translated)
+
 import numpy as np
 
-# Три вектори в R²
-v1 = np.array([1, 0])
-v2 = np.array([0, 1])
-v3 = np.array([2, 3])
+# Система з 4 рівнянь і 4 невідомих
+A = np.array([
+    [2, 1, -1, 3],
+    [1, 3, 2, -1],
+    [3, -1, 1, 2],
+    [1, 2, 3, 1]
+])
 
-# Складаємо матрицю з векторів як стовпців
-A = np.column_stack([v1, v2, v3])
-print("Матриця з векторів:")
-print(A)
+b = np.array([7, 8, 5, 10])
 
-rank = np.linalg.matrix_rank(A)
-print(f"Ранг матриці: {rank}")
-print(f"Кількість векторів: {A.shape[1]}")
+x = np.linalg.solve(A, b)
 
-if rank < A.shape[1]:
-    print(f"Вектори лінійно залежні")
-    print(f"Лінійно незалежних серед них: {rank}")
-else:
-    print(f"Вектори лінійно незалежні")
+# print(x)
+
+print(f"Розв'язок:")
+for i, val in enumerate(x, 1):
+    print(f"  x_{i} = {val:.4f}")
+
+# Перевірка
+solution_error = A @ x - b
+print(f"Похибка розв'язку: {np.linalg.norm(solution_error):.2e}")
